@@ -1,22 +1,29 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Jun 13 17:13:46 2023
+Created on Tue Jun 13 17:56:07 2023
 
-@author: sherr
+@author: King Vann
 """
+#  y = v0t − 0.5*g*t**2
 
-def calculate_max_height(v0, g):
-    max_height = (v0 ** 2) / (2 * g)
-    return max_height
-
-def main():
-    v0 = float(input("Enter the initial velocity of the ball (ft/sec): "))
-    g = 32.8  # force of gravity in ft/sec^2
-
-    max_height = calculate_max_height(v0, g)
-
-    print("The maximum height reached by the ball is: {:.2f} ft".format(max_height))
-
-if __name__ == '__main__':
-    main()
+def height(v0, t):
+    g = 32.8
     
+    y = v0*t - 0.5*g*t**2
+    return y
+
+t=1
+while t > 0:
+    v0 = input('input velocity: ')
+    v0 = float(v0)
+    t = input('input time, sec: ')
+    t = float(t)
+    y = height(v0,t)
+    
+    print(f'after {t} sexonds height = {y}')
+    
+    """
+    at time 1.6 ball got to its max height 
+    which was about 38 feet. Assuming we throw it vertically
+    at initial velocity 50 fps
+    """
